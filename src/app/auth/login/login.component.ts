@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { DataLogin } from '../../interfaces/data-login';
 import { AuthService } from '../../services/auth.service';
@@ -16,7 +15,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -54,11 +52,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(data).subscribe(
       (response) => {
         if(response.user){
-          this.router.navigate(['/spaces']);
+          window.location.href = '/spaces';
           this.saveDataLocalStorage(data, response);
-          setTimeout(() => {
-            window.location.reload();
-          }, 100);
+
         }else{
           const res: any = response;
           this.throwMessages('error', res.message);
