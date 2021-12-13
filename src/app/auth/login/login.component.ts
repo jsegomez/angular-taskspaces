@@ -56,9 +56,9 @@ export class LoginComponent implements OnInit {
         if(response.user){
           this.router.navigate(['/spaces']);
           this.saveDataLocalStorage(data, response);
-          // setTimeout(() => {
-          //   window.location.reload();
-          // }, 100);
+          setTimeout(() => {
+            window.location.reload();
+          }, 100);
         }else{
           const res: any = response;
           this.throwMessages('error', res.message);
@@ -76,8 +76,6 @@ export class LoginComponent implements OnInit {
 
     localStorage.setItem('dataUserToken', JSON.stringify(data));
   }
-
-
 
   throwMessages(state: SweetAlertIcon, message: string ){
     Swal.fire({
