@@ -1,0 +1,84 @@
+<div class="navbar-default sidebar" role="navigation" *ngIf="dataUser">
+  <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+    <div class="user-profile">
+      <div class="dropdown user-pro-body">
+        <div>
+          <img src="./assets/plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
+        </div>
+        <p class="dropdown-toggle u-dropdown" aria-haspopup="true" aria-expanded="false">{{ name }} {{ lastname }}
+        </p>
+      </div>
+    </div>
+    <ul class="nav" id="side-menu">
+      <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+        <!-- input-group -->
+        <div class="input-group custom-search-form">
+          <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+          </span>
+        </div>
+        <!-- /input-group -->
+      </li>
+      <!-- <li class="nav-small-cap m-t-10">---Main Menu</li> -->
+      <li>
+        <a routerLink="/spaces/list" class="waves-effect" routerLinkActive="active">
+          <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+          <span class="hide-menu">Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/spaces/details" class="waves-effect" routerLinkActive="active">
+          <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+          <span class="hide-menu">Dashboard 2</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="widgets.html" class="waves-effect">
+          <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+          <span class="hide-menu">Widgets</span>
+        </a>
+      </li>
+
+
+      <li>
+        <a href="inbox.html" class="waves-effect">
+          <i data-icon=")" class="linea-icon linea-basic fa-fw"></i>
+          <span class="hide-menu">Apps <span class="fa arrow"></span></span>
+        </a>
+        <ul class="nav nav-second-level">
+          <li><a href="chat.html">Chat-message</a></li>
+          <li><a href="javascript:void(0)" class="waves-effect">Inbox<span class="fa arrow"></span></a>
+            <ul class="nav nav-third-level">
+              <li> <a href="inbox.html">Mail box</a></li>
+              <li> <a href="inbox-detail.html">Inbox detail</a></li>
+              <li> <a href="compose.html">Compose mail</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)" class="waves-effect">Contacts<span class="fa arrow"></span></a>
+            <ul class="nav nav-third-level">
+              <li> <a href="contact.html">Contact1</a></li>
+              <li> <a href="contact2.html">Contact2</a></li>
+              <li> <a href="contact-detail.html">Contact Detail</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li> <a href="#" class="waves-effect"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i> <span
+            class="hide-menu">Icons<span class="fa arrow"></span></span></a>
+        <ul class="nav nav-second-level">
+          <li> <a href="fontawesome.html">Font awesome</a> </li>
+          <li> <a href="themifyicon.html">Themify Icons</a> </li>
+          <li> <a href="simple-line.html">Simple line Icons</a> </li>
+          <li><a href="linea-icon.html">Linea Icons</a></li>
+          <li><a href="weather.html">Weather Icons</a></li>
+        </ul>
+      </li>
+      <li> <a href="map-google.html" class="waves-effect"><i data-icon="Q"
+            class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Google Map</span></a> </li>
+
+    </ul>
+  </div>
+</div>

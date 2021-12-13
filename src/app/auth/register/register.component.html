@@ -1,0 +1,94 @@
+<section id="wrapper" class="login-register">
+  <div class="login-box login-sidebar animated fadeInRight">
+    <div class="white-box">
+      <form class="form-horizontal form-material" id="loginform" [formGroup]="registerForm">
+        <a class="text-center db">
+          <br />
+          <h1 style="font-weight: 500;">TaskSpaces</h1>
+        </a>
+
+        <div class="form-group m-t-40" [ngClass]="{'has-error has-feedback': validateFields('name')}">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Nombres" formControlName="name">
+            <span class="glyphicon glyphicon-remove form-control-feedback t-0" *ngIf="validateFields('name')"></span>
+            <div style="height: 18px;">
+              <small *ngIf="validateFields('name')" class="text-danger">
+                Nombre debe tener al menos 3 caracteres
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error has-feedback': validateFields('lastname')}">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Apellidos" formControlName="lastname">
+            <span class="glyphicon glyphicon-remove form-control-feedback t-0"
+              *ngIf="validateFields('lastname')"></span>
+            <div style="height: 18px;">
+              <small *ngIf="validateFields('lastname')" class="text-danger">
+                Apellido debe tener al menos 3 caracteres
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error has-feedback': validateFields('email')}">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Email" formControlName="email">
+            <span class="glyphicon glyphicon-remove form-control-feedback t-0" *ngIf="validateFields('email')"></span>
+            <div style="height: 18px;">
+              <small *ngIf="validateFields('email')" class="text-danger">
+                Favor ingrese un email válido
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error has-feedback': validateFields('password')}">
+          <div class="col-xs-12">
+            <input class="form-control" type="password" placeholder="Contraseña" formControlName="password">
+            <div style="height: 18px;">
+              <small *ngIf="validateFields('password')" class="text-danger">
+                Contraseña debe contener 8 caracteres
+              </small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error has-feedback': confirmPassword()}">
+          <div class="col-xs-12">
+            <input class="form-control" type="password" placeholder="Confirmar contraseña" formControlName="password2">
+            <div style="height: 18px;">
+              <div>
+                <small *ngIf="confirmPassword()" class="text-danger">
+                  Contraseña no coinciden
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
+              type="submit"
+              (click)="createUser()"
+              [disabled]="isLoading"
+            >
+              Registrarse
+              <i class="fa fa-circle-o-notch fa-spin" *ngIf="isLoading"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group m-b-0">
+          <div class="col-sm-12 text-center">
+            <p>Ya tienes una cuenta? <a routerLink="/login" class="text-primary m-l-5"><b>Iniciar sesión</b></a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
